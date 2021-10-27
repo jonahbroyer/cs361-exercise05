@@ -2,7 +2,7 @@
 
 class LaunchDiscussionWorkflow
 
-  attr_accessor :discussion, :host, :participants
+  attr_accessor :discussion, :host, :participants_email_string
 
   def initialize(discussion, host, participants_email_string)
     @discussion = discussion
