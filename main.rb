@@ -2,11 +2,12 @@
 
 class LaunchDiscussionWorkflow
 
+  attr_accessor :discussion, :host, :participants
+
   def initialize(discussion, host, participants_email_string)
     @discussion = discussion
     @host = host
     @participants_email_string = participants_email_string
-    @participants = []
   end
 
   # Expects @participants array to be filled with User objects
@@ -32,10 +33,10 @@ class LaunchDiscussionWorkflow
 
 end
 
-
+participants = []
 discussion = Discussion.new(title: "fake", ...)
 host = User.find(42)
-participants = "fake1@example.com\nfake2@example.com\nfake3@example.com"
+participants >> "fake1@example.com\nfake2@example.com\nfake3@example.com"
 
 workflow = LaunchDiscussionWorkflow.new(discussion, host, participants)
 workflow.generate_participant_users_from_email_string
